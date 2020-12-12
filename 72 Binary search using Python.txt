@@ -30,3 +30,36 @@ if search(list, n):
     print("Found at ",pos+1)
 else:
     print("Not Found")
+    
+
+#Using for loop
+pos = -1
+
+def search(ar,a):
+    s=0
+    e=len(ar)-1
+    for i in range(s,e+1):
+        mid = s + (e-s) // 2
+        if ar[i] == a:
+            globals()['pos'] = a
+            return True
+        else:
+            if ar[mid] < a:
+                s = mid+1
+            else:
+                e = mid-1
+
+    return False
+
+ar = [1,3,4,6,7,8]
+
+
+
+a = 8
+
+if search(ar,a):
+    print("Found",pos)
+else:
+    print("Not Found")
+    
+
